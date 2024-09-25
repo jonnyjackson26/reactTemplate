@@ -1,10 +1,36 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+import React, { useState, useEffect, useContext } from 'react';
+import ReactDOM from 'react-dom/client'
+import Home from './pages/Home/Home';
+import About from './pages/About/About'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+
+
+const router = createHashRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+])
+
+
+export const Context = React.createContext();
+
+function Main() {
+
+
+  return (
+    <Context.Provider>
+      <RouterProvider router={router} />
+    </Context.Provider>
+  )
+}
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Main />
 )
