@@ -1,4 +1,14 @@
-This is the learn markdown game
-Its fun like flex box froggy
-and helps you learn markdown
-Has 3 splits (one for the example that youre trying to get to) (one for you to type) (and one for your code to execute)
+mkdir word-counter  
+cd word-counter  
+npm create vite@latest  
+react/javascript  
+cd word-counter  
+npm install  
+npm install -g firebase tools  
+npm run build  
+firebase login  
+firebase init hosting  
+  dist  
+  DONT OVERWRITE dist/index.html  
+firebase serve  
+firebase deploy  
